@@ -1,0 +1,113 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*main css*/
+body{
+    background-color: rgb(252,252,252);
+}
+h1{
+    font-size:  45px;
+    text-align: center;
+    margin: 60px;
+    margin-bottom: 20px;
+}
+
+#body{
+    position: fixed;
+    margin: 10px 38%;
+    background-color: black;
+    padding: 15px 20px 5px 0px;
+    border: 1px solid black;
+    height: 375px;
+    width: 300px;
+    border-radius: 5px;
+    box-shadow:  0 0 10px black;
+}
+
+
+#container{
+    display: grid;
+    grid-template-columns: 65px 65px 65px 65px;
+    grid-gap:10px;
+    margin: 5px 15px;
+}
+#display{
+    width: 277px;
+    height: 50px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    color: black;
+    font-size: 30px;
+    text-align: right;
+    padding: 6px;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+#calc{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    background-color: rgb(252, 184, 38);
+}
+button{
+    border : transparent;
+    border-radius: 5px;
+    background-color:black;
+    color: white;
+    padding: 10px 20px;
+    font-size: 23px;
+    outline: none;
+    transition: all 0.25s;
+}
+button:hover{
+    background-color:rgba(240,240,240,0.3);
+    cursor: pointer;
+}
+
+#clear,#backspace{
+    background-color: rgba(250,0,0,0.5);
+}
