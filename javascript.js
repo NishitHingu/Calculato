@@ -23,6 +23,7 @@ document.addEventListener('keydown' , (event) => {
     else if (keypressed == 'c' || keypressed == 'C') input.textContent = '';
     else if (keypressed == '%') calcPercentage();
     else if (keypressed >= 0 && keypressed <= 9) input.textContent += keypressed;
+    else if (keypressed == '.') addingDot();
     else if (keypressed == 'Backspace') input.textContent = input.textContent.slice(0,-1);
     else if (keypressed == '=') solve();
 
@@ -42,10 +43,13 @@ function calcPercentage(){
              operate(args[i+1], args[i]);}
     }
     result = +result / 100;
-    input.textContent = +result.toPrecision(15);
+    displayResult();
 }
 
 dot.addEventListener('click', () => {
+    addingDot();
+})
+function addingDot(){
     let txt = input.textContent.trim(); 
     let addDOt = true;
     [...txt].forEach(char => {
@@ -53,7 +57,7 @@ dot.addEventListener('click', () => {
         else if(char === '+' || char ==='-' || char === '*' || char === '/') addDOt = true;
     })
     if(addDOt) input.textContent = txt + '.';
-})
+}
 
 operations.forEach(operation => operation.addEventListener('click', () => {
         let txt = input.textContent.trim();
@@ -82,7 +86,7 @@ function solve (){
                 operate(args[i+1], args[i]);}
         }
         if (result == 'ERROR') input.textContent = result;
-        else input.textContent = result.toPrecision(15);
+        else displayResult();
 }
 
 
@@ -108,6 +112,11 @@ function operate(a,operator){
         
     }
 }
+function displayResult(){
+    if (Number.isInteger(result)) input.textContent = result;
+    else input.textContent = result.toFixed(4);
+}
+
 
 /*functions that can added but removed for now bcz of bugs
     change.addEventListener('click', () => {
